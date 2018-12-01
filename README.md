@@ -91,6 +91,15 @@ val outliers = new Owl(df).outliersDF("ASSET")
 
 ## Rules and Repair Strategies
 
+```scala
+val owl = new Owl(df)
+  .option("ds","zepSeq")
+  .addRule("kirk fname rule", "first = 'Kirk'")
+  .addRule("age less than 105", "age < 105")
+// Blend Rules into the Pipeline
+owl.rulesDF
+```
+
 ## Duplicates
 <img src="https://owl-analytics.com/img/dupe-img.png" alt="duplicates" width="300">
 
