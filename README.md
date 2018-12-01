@@ -64,3 +64,18 @@ val outliers = new Owl(df).outliersDF("ASSET")
 
 ## Duplicates
 <img src="https://owl-analytics.com/img/dupe-img.png" alt="duplicates" width="300">
+
+```scala
+val l = Seq(
+  ("Kirk", "Haslbeck", "2018-02-24 8:30:45", 18),
+  ("Kirk", "Hasselbach", "2018-02-23 8:30:45", 11),
+  ("Kirt", "Haslbeck", "2018-02-22 8:30:45", 10),
+  ("Kirk", "hasselback", "2018-02-21 8:30:45", 12),
+  ("kirk", "Haslbeck", "2018-02-20 8:30:45", 10)
+)
+
+val df = l.toDF("fname","lname", "app_date", "price")
+val owl = new Owl(df).dupesDF
+```
+
+
