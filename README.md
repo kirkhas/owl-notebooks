@@ -92,11 +92,12 @@ val outliers = new Owl(df).outliersDF("ASSET")
 ## Rules and Repair Strategies
 
 ```scala
-// create OwlSparkDF
+// create OwlSpark Context
 val owl = new Owl(df)
-  // add 2 rules
-  .addRule("kirk fname rule", "first = 'Kirk'")
-  .addRule("age less than 105", "age < 105")
+
+// add 2 rules
+owl.addRule("kirk fname rule", "first = 'Kirk'")
+owl.addRule("age less than 105", "age < 105")
   
 // Execute the rules in the Pipeline
 owl.rulesDF
