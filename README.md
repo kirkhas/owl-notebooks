@@ -1,6 +1,6 @@
 # OwlSpark DQ Pipelines
 
-## Build your own rich data quality pipelines directly on dataframes using Owl's DQ suite
+### Build your own rich data quality pipelines directly on dataframes using Owl's DQ suite
 Owl Predictive Data Science **+** Spark Scale
 
 ## Auto Clean
