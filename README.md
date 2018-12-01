@@ -6,6 +6,7 @@ Owl blends data science algorithms specifically targeted towards identifying DQ 
 ## Auto Clean
 <img src="https://owl-analytics.com/img/landing/clean-stacked.png" alt="clean" width="600">
 
+
 ## Outliers
 
 ```scala
@@ -30,6 +31,30 @@ val outlierDF  = new Owl(df, props)
 | -------|:---------:| -----:|-----------:|-----------:|
 | Cat    | price     |   144 | 45.5       |34          |
 | Kirk   | price     |    18 | 10.5       |77          |
+
+
+
+## Categorical Outliers
+
+```scala
+val assetClass = Seq("STOCK","OPTION","FUTURE","STOCK","OPTION","FUTURE","STOCK",
+  "STOCK", "FUTURE",
+  "STOCK","OPTION","FUTURE","STOCK","OPTION","FUTURE","STOCK", "STOCK", "FUTURE",
+  "STOCK","OPTION","FUTURE","STOCK","OPTION","FUTURE","STOCK", "STOCK", "FUTURE",
+  "STOCK","OPTION","FUTURE","STOCK","OPTION","FUTURE","STOCK", "STOCK", "FUTURE",
+  "STOCK","OPTION","FUTURE","STOCK","OPTION","FUTURE","STOCK", "STOCK", "FUTURE",
+  "STOCK","OPTION","FUTURE","STOCK","OPTION","FUTURE","STOCK", "STOCK", "FUTURE",
+  "SWAP", "OPTION", "STOCK","SWAP", "SWAP", "FUTRS", "STOCK", "OPTION", "FUTURE",
+  "OPTION", "STOCK" )
+
+val df = assetClass.toDF("ASSET")
+val outliers = new Owl(df).outliersDF("ASSET")
+```
+
+| Key    | Column    | Value | Prediction | Confidence |
+| -------|:---------:|-------|------------|-----------:|
+|        | ASSET     | FUTRS | FUTURES    |            |
+
 
 ## Profile
 
