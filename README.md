@@ -78,4 +78,8 @@ val df = l.toDF("fname","lname", "app_date", "price")
 val owl = new Owl(df).dupesDF
 ```
 
-
+| distance | records                                                                                      | 
+| --------:|:---------------------------------------------------------------------------------------------|
+|   0.16   | DUPE [score: 83 ][Kirk,Hasselbach,2018-02-23 8:30:45]  [Kirt,Haslbeck,2018-02-22 8:30:45]  |
+|   0.083  | DUPE [score: 91 ][Kirk,Haslbeck,2018-02-24 8:30:45]  [Kirt,Haslbeck,2018-02-22 8:30:45]    |
+|   0.083  | DUPE [score: 91 ][Kirk,Haslbeck,2018-02-24 8:30:45]  [Kirk,Hasselbach,2018-02-23 8:30:45]  |
